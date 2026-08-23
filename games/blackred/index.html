@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
   <title>블랙레드 — SGRA 88</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
   <style>.card.back::after{content:"";width:78%;aspect-ratio:1;padding:0;border:3px solid #fff;border-radius:12px;background:url("../../og.png?v=card-back-1") center/cover;box-shadow:0 8px 20px rgba(8,35,61,.35);transform:rotate(-3deg)}</style>
 </head>
 <body>
@@ -29,7 +29,9 @@
 
       <div class="table">
         <div class="title"><span>WHAT COLOR?</span><h1>블랙 <em>or</em> 레드</h1></div>
-        <div id="card" class="card back" aria-live="polite"><b>?</b></div>
+        <div id="cardTrail" class="card-trail">
+          <div id="card" class="card back" aria-live="polite"><b>?</b></div>
+        </div>
         <p id="message" class="message">나올 카드의 색을 선택하세요.</p>
         <div class="choices">
           <button id="blackButton" class="choice black" type="button"><span>♠ ♣</span><b>BLACK</b></button>
@@ -39,6 +41,6 @@
       </div>
     </section>
   </main>
-  <script src="game.js?v=1"></script>
+  <script src="game.js?v=2"></script>
 </body>
 </html>
