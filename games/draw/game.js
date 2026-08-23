@@ -48,6 +48,10 @@ function makeCard(number) {
 function startRound() {
   winningNumbers = new Set(secureShuffle(Array.from({ length: settings.total }, (_, index) => index + 1)).slice(0, settings.winners));
   foundNumbers = [];
+  const columns = Math.ceil(Math.sqrt(settings.total));
+  const rows = Math.ceil(settings.total / columns);
+  board.style.setProperty('--columns', columns);
+  board.style.setProperty('--rows', rows);
   board.replaceChildren(...Array.from({ length: settings.total }, (_, index) => makeCard(index + 1)));
   foundBox.textContent = `0 / ${settings.winners}`;
   summary.hidden = true;
