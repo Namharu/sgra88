@@ -12,5 +12,5 @@
 ## 페이지
 
 - 게임 목록: https://namharu.github.io/sgra88/
-- CANNON 3: https://namharu.github.io/sgra88/games/cannon/
+- 대포: https://namharu.github.io/sgra88/games/cannon/
 
