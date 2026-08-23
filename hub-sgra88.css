@@ -99,6 +99,8 @@ header p {
 .wheel-title .name { font-size: 52px; line-height: 1.05; letter-spacing: -.07em; }
 .coin-title::before { background: #ffbd35; }
 .coin-title .name { font-size: 43px; line-height: 1.05; }
+.draw-title::before { background: #ff6fae; }
+.draw-title .name { font-size: 44px; line-height: 1.05; }
 
 .game-title {
   position: relative;

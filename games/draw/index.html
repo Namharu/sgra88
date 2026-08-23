@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#d9f5ff">
+  <meta property="og:image" content="https://namharu.github.io/sgra88/og.png">
+  <title>뽑기판 — SGRA 88</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <main>
+    <header>
+      <a href="../../"><i></i> 뽑기판</a>
+      <span>SGRA 88 LUCKY DRAW</span>
+    </header>
+
+    <section id="setup" class="setup">
+      <div class="setup-card">
+        <small>LUCKY NUMBER BOARD</small>
+        <h1>행운의 번호를 뽑아보세요</h1>
+        <p>참여 인원과 당첨 인원을 정하면 번호판이 만들어집니다.</p>
+        <div class="fields">
+          <label>참여 인원<input id="total" type="number" min="2" max="100" value="30" inputmode="numeric"></label>
+          <label>당첨 인원<input id="winners" type="number" min="1" max="99" value="10" inputmode="numeric"></label>
+        </div>
+        <label class="order-option"><input id="ordered" type="checkbox"><span></span>당첨 순서 표시</label>
+        <p id="setupError" class="error" role="alert"></p>
+        <button id="start" class="primary" type="button">시작</button>
+      </div>
+    </section>
+
+    <section id="game" class="game" hidden>
+      <div class="game-top">
+        <div><small>SELECT A NUMBER</small><h1>번호를 선택하세요</h1></div>
+        <div class="counter"><span>당첨 발견</span><b id="found">0 / 0</b></div>
+        <button id="reset" type="button">다시 설정</button>
+      </div>
+      <div id="board" class="board" aria-label="번호 뽑기판"></div>
+      <section id="summary" class="summary" hidden>
+        <small>DRAW COMPLETE</small>
+        <h2>모든 당첨 번호가 나왔습니다!</h2>
+        <p id="winnerNumbers"></p>
+        <div><a href="../../">메인으로</a><button id="replay" type="button">같은 설정으로 다시하기</button></div>
+      </section>
+    </section>
+  </main>
+  <div id="celebration" class="celebration" aria-hidden="true"></div>
+  <script src="game.js?v=1"></script>
+</body>
+</html>
