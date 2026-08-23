@@ -14,6 +14,7 @@ let settings = { total: 30, winners: 10, ordered: false };
 let winningNumbers = new Set();
 let foundNumbers = [];
 let audioContext;
+let layout = { columns: 6, rows: 5 };
 
 function getAudioContext() {
   const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -83,11 +84,26 @@ function makeCard(number) {
   return card;
 }
 
+function fitBoardToScreen() {
+  if (game.hidden || !board.childElementCount) return;
+  const gap = window.innerWidth <= 650 ? 4 : 12;
+  const top = board.getBoundingClientRect().top;
+  const availableWidth = Math.min(1100, game.clientWidth - 8);
+  const availableHeight = Math.max(260, window.innerHeight - top - 20);
+  const cellByWidth = (availableWidth - gap * (layout.columns - 1)) / layout.columns;
+  const cellByHeight = (availableHeight - gap * (layout.rows - 1)) / layout.rows;
+  const cell = Math.max(26, Math.floor(Math.min(110, cellByWidth, cellByHeight)));
+  board.style.width = `${cell * layout.columns + gap * (layout.columns - 1)}px`;
+  board.style.setProperty('--number-size', `${Math.max(12, Math.min(49, cell * .44))}px`);
+  board.style.setProperty('--result-size', `${Math.max(10, Math.min(39, cell * .36))}px`);
+}
+
 function startRound() {
   winningNumbers = new Set(secureShuffle(Array.from({ length: settings.total }, (_, index) => index + 1)).slice(0, settings.winners));
   foundNumbers = [];
   const columns = Math.ceil(Math.sqrt(settings.total));
   const rows = Math.ceil(settings.total / columns);
+  layout = { columns, rows };
   board.style.setProperty('--columns', columns);
   board.style.setProperty('--rows', rows);
   board.replaceChildren(...Array.from({ length: settings.total }, (_, index) => makeCard(index + 1)));
@@ -95,6 +111,7 @@ function startRound() {
   summary.hidden = true;
   setup.hidden = true;
   game.hidden = false;
+  requestAnimationFrame(fitBoardToScreen);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -154,6 +171,7 @@ document.querySelector('#reset').addEventListener('click', () => {
 });
 
 document.querySelector('#replay').addEventListener('click', startRound);
+window.addEventListener('resize', fitBoardToScreen);
 [totalInput, winnerInput].forEach(input => input.addEventListener('keydown', event => {
   if (event.key === 'Enter') document.querySelector('#start').click();
 }));
