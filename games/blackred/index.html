@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#10253a">
-  <meta name="description" content="카드 색을 맞히는 스그라88 블랙레드 게임">
-  <meta property="og:title" content="블랙레드 — SGRA 88">
-  <meta property="og:description" content="블랙 또는 레드를 고르고 카드를 공개하세요. 조커는 무조건 승리!">
+  <meta name="description" content="카드 색을 맞히는 스그라88 검빨 게임">
+  <meta property="og:title" content="검빨 — SGRA 88">
+  <meta property="og:description" content="검정 또는 빨강을 고르고 카드를 공개하세요. 조커는 무조건 승리!">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
-  <title>블랙레드 — SGRA 88</title>
-  <link rel="stylesheet" href="styles.css?v=unified-theme-1">
+  <title>검빨 — SGRA 88</title>
+  <link rel="stylesheet" href="styles.css?v=unified-theme-2">
   <style>.card.back{background:#050505;border:2px solid #17283a;outline:0}.card.back::after{content:"";position:absolute;inset:0;width:auto;aspect-ratio:auto;padding:0;border:0;border-radius:0;background:#050505 url("../../og.png?v=card-back-2") center/100% auto no-repeat;box-shadow:none;transform:none}</style>
 </head>
 <body>
   <main class="shell">
     <header class="topbar">
       <a class="brand" href="../../" aria-label="게임 목록으로 돌아가기"><span></span>Main</a>
-      <div class="rules">♠ ♣ = BLACK · ♥ ♦ = RED · JOKER = WIN</div>
+      <div class="rules">♠ ♣ = 검정 · ♥ ♦ = 빨강 · JOKER = WIN</div>
     </header>
 
-    <section class="game" aria-label="블랙레드 카드 게임">
+    <section class="game" aria-label="검빨 카드 게임">
       <div class="hud">
         <div><small>남은 카드</small><strong id="remaining">54</strong></div>
         <div><small>연승</small><strong id="streak">0</strong></div>
@@ -28,14 +28,14 @@
       </div>
 
       <div class="table">
-        <div class="title"><span>WHAT COLOR?</span><h1>블랙 <em>or</em> 레드</h1></div>
+        <div class="title"><span>WHAT COLOR?</span><h1>검 <em>or</em> 빨</h1></div>
         <div id="cardTrail" class="card-trail">
           <div id="card" class="card back" aria-live="polite"><b>?</b></div>
         </div>
         <p id="message" class="message">나올 카드의 색을 선택하세요.</p>
         <div class="choices">
-          <button id="blackButton" class="choice black" type="button"><span>♠ ♣</span><b>BLACK</b></button>
-          <button id="redButton" class="choice red-choice" type="button"><span>♥ ♦</span><b>RED</b></button>
+          <button id="blackButton" class="choice black" type="button"><span>♠ ♣</span><b>검정</b></button>
+          <button id="redButton" class="choice red-choice" type="button"><span>♥ ♦</span><b>빨강</b></button>
         </div>
         <button id="restartButton" class="restart" type="button">패 섞기</button>
       </div>
