@@ -13,4 +13,5 @@
 
 - 게임 목록: https://namharu.github.io/sgra88/
 - 대포: https://namharu.github.io/sgra88/games/cannon/
+- 하이로우: https://namharu.github.io/sgra88/games/highlow/
 
