@@ -95,6 +95,11 @@ header p {
 .race-title::before { background: #ff8b61; }
 .cliff-title::before { background: #8f7bea; }
 .cliff-title .name { font-size: 40px; line-height: 1.05; }
+.race2-title::before { background: #47d8c5; }
+.cliff2-title::before { background: #ff6b6b; }
+.race2-title .name,
+.cliff2-title .name { font-size: 38px; line-height: 1.05; }
+.animal-series-two { padding-bottom: 70px; }
 .wheel-title::before { background: #56e0d4; }
 .wheel-title .name { font-size: 52px; line-height: 1.05; letter-spacing: -.07em; }
 .coin-title::before { background: #ffbd35; }
