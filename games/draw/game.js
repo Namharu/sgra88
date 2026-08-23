@@ -13,6 +13,44 @@ const celebration = document.querySelector('#celebration');
 let settings = { total: 30, winners: 10, ordered: false };
 let winningNumbers = new Set();
 let foundNumbers = [];
+let audioContext;
+
+function getAudioContext() {
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContext) return null;
+  audioContext ??= new AudioContext();
+  if (audioContext.state === 'suspended') audioContext.resume();
+  return audioContext;
+}
+
+function playTone(frequency, start, duration, type = 'sine', volume = .13, endFrequency = frequency) {
+  const context = getAudioContext();
+  if (!context) return;
+  const oscillator = context.createOscillator();
+  const gain = context.createGain();
+  const beginsAt = context.currentTime + start;
+  oscillator.type = type;
+  oscillator.frequency.setValueAtTime(frequency, beginsAt);
+  oscillator.frequency.exponentialRampToValueAtTime(endFrequency, beginsAt + duration);
+  gain.gain.setValueAtTime(.001, beginsAt);
+  gain.gain.exponentialRampToValueAtTime(volume, beginsAt + .015);
+  gain.gain.exponentialRampToValueAtTime(.001, beginsAt + duration);
+  oscillator.connect(gain).connect(context.destination);
+  oscillator.start(beginsAt);
+  oscillator.stop(beginsAt + duration + .02);
+}
+
+function playMissSound() {
+  playTone(210, 0, .38, 'square', .11, 105);
+  playTone(105, .04, .34, 'sine', .16, 82);
+}
+
+function playWinSound() {
+  [659.25, 783.99, 987.77, 1318.51].forEach((frequency, index) => {
+    playTone(frequency, index * .095, .46, 'sine', .12);
+    playTone(frequency * 2, index * .095, .24, 'sine', .035);
+  });
+}
 
 function secureShuffle(values) {
   const result = [...values];
@@ -68,6 +106,7 @@ function reveal(card, number) {
   card.classList.add('revealed', isWinner ? 'winner' : 'loser');
   card.disabled = true;
   if (isWinner) {
+    playWinSound();
     foundNumbers.push(number);
     backTitle.textContent = '당첨';
     backDetail.textContent = settings.ordered ? `${foundNumbers.length}번째 당첨` : '';
@@ -76,6 +115,7 @@ function reveal(card, number) {
     burst();
     if (foundNumbers.length === settings.winners) window.setTimeout(finishRound, 720);
   } else {
+    playMissSound();
     backTitle.textContent = '꽝';
     backDetail.textContent = '';
   }
