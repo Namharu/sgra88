@@ -35,14 +35,23 @@ button:disabled { cursor:default; opacity:.45; }
 .obstacle { position:absolute; z-index:2; bottom:7px; translate:-50% 0; font-size:23px; transition:.25s; filter:drop-shadow(0 2px 2px rgba(20,58,90,.2)); }
 .obstacle.passed { transform:scale(.45); opacity:.25; }
 .lane-name { position:absolute; z-index:3; left:8px; top:6px; padding:2px 6px; border-radius:3px; background:rgba(255,255,255,.82); color:#214a6e; font-size:9px; font-weight:900; }
-.racer { position:absolute; z-index:4; left:10px; bottom:2px; font-size:38px; line-height:1; transform:translateX(0); transition:transform .09s linear; filter:drop-shadow(0 4px 3px rgba(20,58,90,.18)); }
+.racer { position:absolute; z-index:4; left:10px; bottom:1px; width:62px; height:44px; line-height:1; transform:translateX(0); transition:transform .09s linear; filter:drop-shadow(0 4px 3px rgba(20,58,90,.18)); }
 .racer i { font-style:normal; }
+.runner-avatar { position:relative; display:block; width:60px; height:43px; transform-origin:50% 100%; }
+.runner-body { position:absolute; z-index:2; left:13px; top:17px; width:35px; height:18px; border:2px solid #173d5c; border-radius:55% 48% 45% 50%; background:#f2c84b; }
+.runner-head { position:absolute; z-index:4; right:-1px; top:1px; font-size:29px; }
+.runner-leg { position:absolute; z-index:1; top:31px; width:6px; height:13px; border:2px solid #173d5c; border-radius:4px; background:#f2c84b; transform-origin:50% 1px; }
+.runner-leg.front-a { left:38px; }.runner-leg.front-b { left:31px; }.runner-leg.back-a { left:19px; }.runner-leg.back-b { left:12px; }
 .effect-label { position:absolute; left:50%; bottom:38px; translate:-50% 0; padding:3px 5px; border-radius:3px; background:#fff; color:#174d7b; font:900 8px "Noto Sans KR",sans-serif; white-space:nowrap; box-shadow:0 3px 8px rgba(20,58,90,.18); }
 .effect-label:empty { display:none; }
-.racer.running { animation:bob .22s infinite alternate ease-in-out; }
-.racer.dash i { display:inline-block; animation:dashPulse .18s infinite alternate; filter:drop-shadow(-12px 0 2px rgba(32,145,226,.35)); }
-.racer.tired i,.racer.attacked i,.racer.stumble i { display:inline-block; animation:wobble .35s infinite alternate; }
-.racer.attack i { display:inline-block; scale:1.18; }
+.racer.running .runner-avatar { animation:runBob .2s infinite alternate ease-in-out; }
+.racer.running .front-a,.racer.running .back-b { animation:legRun .18s infinite alternate ease-in-out; }
+.racer.running .front-b,.racer.running .back-a { animation:legRun .18s infinite alternate-reverse ease-in-out; }
+.racer.dash::before { content:""; position:absolute; z-index:-1; left:-52px; top:17px; width:62px; height:5px; border-radius:50%; background:linear-gradient(90deg,transparent,#65d7ff,#fff); box-shadow:0 -9px 0 -2px rgba(53,183,255,.65),0 9px 0 -2px rgba(53,183,255,.45); animation:boostTrail .18s infinite alternate; }
+.racer.dash .runner-avatar { animation:dashPulse .16s infinite alternate; filter:drop-shadow(-8px 0 5px #68d9ff) drop-shadow(0 0 7px #fff); }
+.racer.tired .runner-avatar,.racer.attacked .runner-avatar,.racer.stumble .runner-avatar { animation:wobble .35s infinite alternate; }
+.racer.attack .runner-avatar { scale:1.14; }
+.racer.jump .runner-avatar { animation:obstacleJump .68s ease; }
 .racer.finished { filter:drop-shadow(0 4px 3px rgba(20,58,90,.18)) saturate(.65); }
 .result { position:absolute; z-index:10; inset:0; display:grid; place-content:center; text-align:center; background:rgba(232,248,255,.94); backdrop-filter:blur(6px); }
 .result[hidden] { display:none; }
@@ -56,8 +65,11 @@ button:disabled { cursor:default; opacity:.45; }
 .standing-animal { font-size:22px; }
 .standing strong { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12px; }
 .standing time { color:#315976; font:700 11px "DM Mono",monospace; }
-@keyframes bob { to { translate:0 -5px; rotate:2deg; } }
-@keyframes dashPulse { to { transform:translateX(7px) scale(1.08); } }
+@keyframes runBob { to { transform:translateY(-3px) rotate(1deg); } }
+@keyframes legRun { to { transform:rotate(38deg) translateY(-1px); } }
+@keyframes dashPulse { to { transform:translateX(7px) scale(1.06); } }
+@keyframes boostTrail { to { opacity:.45; transform:scaleX(.7); } }
+@keyframes obstacleJump { 0%,100% { transform:translateY(0) rotate(0); } 45% { transform:translateY(-34px) rotate(-5deg) scale(1.05); } }
 @keyframes wobble { to { transform:rotate(-10deg) translateY(3px); } }
 @keyframes winner { from { transform:scale(.3) rotate(-12deg); opacity:0; } to { transform:scale(1); opacity:1; } }
 @media(max-width:700px){.shell{width:100%;padding:0}.topbar{height:58px;padding:0 14px}.game{border-left:0;border-right:0;border-radius:0}.control-panel{padding:18px 14px}.name-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.race-panel{min-height:calc(100dvh - 288px);padding:16px 10px 24px}.track{height:62px}.racer{font-size:34px}.lane-name{font-size:8px}.heading h1{font-size:30px}}
