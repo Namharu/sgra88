@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#92d2ff">
+  <meta name="description" content="동물들이 결승선을 향해 달리는 스그라88 동물경주 게임">
+  <meta property="og:title" content="동물경주 — SGRA 88">
+  <meta property="og:description" content="참가자 이름을 정하고 무작위 동물경주를 시작하세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
+  <title>동물경주 — SGRA 88</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="게임 목록으로 돌아가기"><span></span>동물경주</a>
+      <div class="rules">RANDOM ANIMAL RACE</div>
+    </header>
+
+    <section class="game">
+      <div class="control-panel">
+        <div class="heading">
+          <div><small>SGRA 88 RACE</small><h1>동물경주</h1></div>
+          <label>참가자 수
+            <select id="playerCount" aria-label="참가자 수">
+              <option value="2">2명</option><option value="3">3명</option>
+              <option value="4" selected>4명</option><option value="5">5명</option>
+              <option value="6">6명</option>
+            </select>
+          </label>
+        </div>
+        <div id="nameInputs" class="name-inputs" aria-label="참가자 이름 설정"></div>
+        <div class="actions">
+          <button id="shuffleButton" class="secondary" type="button">동물 섞기</button>
+          <button id="startButton" class="start" type="button">경주 시작</button>
+        </div>
+      </div>
+
+      <div class="race-panel">
+        <div class="race-status"><span id="status">참가자를 설정하고 경주를 시작하세요.</span><strong id="timer">0.0</strong></div>
+        <div id="tracks" class="tracks" aria-live="polite"></div>
+        <div id="result" class="result" hidden>
+          <small>WINNER</small><div id="winnerAnimal" class="winner-animal"></div>
+          <h2 id="winnerName"></h2><button id="againButton" type="button">다시 경주</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="game.js?v=1"></script>
+</body>
+</html>

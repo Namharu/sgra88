@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#92d2ff">
+  <meta name="description" content="동물들이 원형 플랫폼에서 살아남는 스그라88 절벽 서바이벌">
+  <meta property="og:title" content="절벽 서바이벌 — SGRA 88">
+  <meta property="og:description" content="서로 밀어내며 최후의 한 마리가 살아남는 자동 대결 게임">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
+  <title>절벽 서바이벌 — SGRA 88</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="게임 목록으로 돌아가기"><span></span>절벽 서바이벌</a>
+      <div class="rules">LAST ANIMAL STANDING</div>
+    </header>
+    <section class="game">
+      <div class="setup">
+        <div><small>SGRA 88 BATTLE</small><h1>절벽 서바이벌</h1><p>동물들이 자동으로 부딪치며 서로를 밀어냅니다. 최후의 한 마리가 승리!</p></div>
+        <label>참가자 수<select id="playerCount"></select></label>
+        <div id="nameInputs" class="name-inputs"></div>
+        <button id="startButton" type="button">게임 시작</button>
+      </div>
+      <div class="battle">
+        <div class="status"><span id="status">참가자를 설정하세요.</span><strong><b id="alive">0</b> ALIVE</strong></div>
+        <div id="arena" class="arena" aria-live="polite"><div id="platform" class="platform"></div></div>
+        <div id="result" class="result" hidden><small>LAST ONE</small><div id="winnerAnimal"></div><h2 id="winnerName"></h2><button id="againButton" type="button">다시 대결</button></div>
+      </div>
+    </section>
+  </main>
+  <script src="game.js?v=1"></script>
+</body>
+</html>
