@@ -85,7 +85,7 @@ header p {
 
 .featured-library {
   display: grid;
-  grid-template-columns: repeat(2, 240px);
+  grid-template-columns: repeat(4, 240px);
   grid-auto-rows: 240px;
   gap: 18px;
   padding-bottom: 70px;
@@ -94,18 +94,11 @@ header p {
 
 .race-title::before { background: #ff8b61; }
 .cliff-title::before { background: #8f7bea; }
-.cliff-title .name { font-size: 40px; line-height: 1.05; }
 .race2-title::before { background: #47d8c5; }
 .cliff2-title::before { background: #ff6b6b; }
-.race2-title .name,
-.cliff2-title .name { font-size: 38px; line-height: 1.05; }
-.animal-series-two { padding-bottom: 70px; }
 .wheel-title::before { background: #56e0d4; }
-.wheel-title .name { font-size: 52px; line-height: 1.05; letter-spacing: -.07em; }
 .coin-title::before { background: #ffbd35; }
-.coin-title .name { font-size: 43px; line-height: 1.05; }
 .draw-title::before { background: #ff6fae; }
-.draw-title .name { font-size: 44px; line-height: 1.05; }
 
 .game-title {
   position: relative;
@@ -144,7 +137,7 @@ header p {
 
 .game-title span { position: relative; z-index: 1; }
 .number { color: var(--blue); font: 500 11px "DM Mono", monospace; letter-spacing: .12em; }
-.name { align-self: center; font-size: 52px; font-weight: 900; letter-spacing: -.06em; }
+.name { align-self: center; font-size: 40px; line-height: 1.05; font-weight: 900; letter-spacing: -.06em; }
 .arrow { justify-self: end; font-size: 27px; transition: transform .2s ease; }
 .game-title:hover .arrow { transform: translate(4px, -4px); }
 
