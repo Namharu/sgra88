@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#9bd5ff">
+  <meta name="description" content="카드 색을 맞히는 스그라88 블랙레드 게임">
+  <meta property="og:title" content="블랙레드 — SGRA 88">
+  <meta property="og:description" content="블랙 또는 레드를 고르고 카드를 공개하세요. 조커는 무조건 승리!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
+  <title>블랙레드 — SGRA 88</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="게임 목록으로 돌아가기"><span></span>블랙레드</a>
+      <div class="rules">♠ ♣ = BLACK · ♥ ♦ = RED · JOKER = WIN</div>
+    </header>
+
+    <section class="game" aria-label="블랙레드 카드 게임">
+      <div class="hud">
+        <div><small>남은 카드</small><strong id="remaining">54</strong></div>
+        <div><small>연승</small><strong id="streak">0</strong></div>
+        <div><small>최고 기록</small><strong id="best">0</strong></div>
+      </div>
+
+      <div class="table">
+        <div class="title"><span>WHAT COLOR?</span><h1>블랙 <em>or</em> 레드</h1></div>
+        <div id="card" class="card back" aria-live="polite"><b>?</b></div>
+        <p id="message" class="message">나올 카드의 색을 선택하세요.</p>
+        <div class="choices">
+          <button id="blackButton" class="choice black" type="button"><span>♠ ♣</span><b>BLACK</b></button>
+          <button id="redButton" class="choice red-choice" type="button"><span>♥ ♦</span><b>RED</b></button>
+        </div>
+        <button id="restartButton" class="restart" type="button" hidden>다시 시작</button>
+      </div>
+    </section>
+  </main>
+  <script src="game.js?v=1"></script>
+</body>
+</html>
