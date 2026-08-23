@@ -4,23 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#92d2ff">
-  <meta name="description" content="동물들이 원형 플랫폼에서 살아남는 스그라88 절벽 서바이벌">
-  <meta property="og:title" content="절벽 서바이벌 — SGRA 88">
+  <meta name="description" content="동물들이 서로 싸우며 플랫폼에서 살아남는 스그라88 동물격투기">
+  <meta property="og:title" content="동물격투기 — SGRA 88">
   <meta property="og:description" content="서로 밀어내며 최후의 한 마리가 살아남는 자동 대결 게임">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
-  <title>절벽 서바이벌 — SGRA 88</title>
+  <title>동물격투기 — SGRA 88</title>
   <link rel="stylesheet" href="styles.css?v=1">
+  <style>
+    .fighter.ultimate{z-index:8;animation:ultimate .45s ease}.skill-label{position:absolute;left:50%;bottom:42px;translate:-50% 0;padding:4px 7px;border-radius:4px;background:#ff3d30;color:#fff;font-size:9px;white-space:nowrap;box-shadow:0 0 18px #ffdb3d}.skill-label:empty{display:none}.arena.ultimate-wave{animation:arenaShake .35s ease}@keyframes ultimate{50%{scale:1.9;filter:drop-shadow(0 0 16px #ffde38)}}@keyframes arenaShake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+  </style>
+  <style>
+    .fighter{width:52px;height:64px;font-size:inherit}.avatar{position:relative;width:48px;height:60px;display:block}.head{position:absolute;z-index:5;left:7px;top:-2px;font-style:normal;font-size:34px}.body{position:absolute;z-index:2;left:15px;top:31px;width:22px;height:23px;border-radius:10px 10px 7px 7px;background:#f2c84b;border:2px solid #173d5c}.arm,.leg{position:absolute;z-index:3;display:block;width:8px;border:2px solid #173d5c;background:#f2c84b;transform-origin:50% 2px}.arm{top:34px;height:23px;border-radius:6px}.arm-left{left:9px;rotate:18deg}.arm-right{right:9px;rotate:-18deg}.leg{top:50px;height:17px;border-radius:5px}.leg-left{left:15px}.leg-right{right:15px}.walking .leg-left{animation:legWalk .28s infinite alternate}.walking .leg-right{animation:legWalk .28s infinite alternate-reverse}.fighter.punching .arm-right,.fighter.ultimate .arm-right{animation:punch .25s ease}.fighter.hit .avatar{animation:bodyHit .35s ease}.fighter.out{animation:slowFall 1.05s ease forwards!important}.tag b{display:block;margin-top:1px;font-size:7px}.tag.attack b{color:#d52f2f}.tag.defense b{color:#1677d2}.tag.balance b{color:#397d5c}@keyframes legWalk{to{rotate:22deg;translate:2px 0}}@keyframes punch{50%{height:34px;rotate:-72deg;translate:12px -5px}}@keyframes bodyHit{50%{rotate:-18deg;translate:-4px 3px}}@keyframes slowFall{45%{scale:.85;rotate:35deg;opacity:.9}to{translate:0 45px;scale:.35;rotate:120deg;opacity:0}}
+  </style>
 </head>
 <body>
   <main class="shell">
     <header class="topbar">
-      <a class="brand" href="../../" aria-label="게임 목록으로 돌아가기"><span></span>절벽 서바이벌</a>
+      <a class="brand" href="../../" aria-label="게임 목록으로 돌아가기"><span></span>동물격투기</a>
       <div class="rules">LAST ANIMAL STANDING</div>
     </header>
     <section class="game">
       <div class="setup">
-        <div><small>SGRA 88 BATTLE</small><h1>절벽 서바이벌</h1><p>동물들이 자동으로 부딪치며 서로를 밀어냅니다. 최후의 한 마리가 승리!</p></div>
+        <div><small>SGRA 88 BATTLE</small><h1>동물격투기</h1><p>동물들이 서로 싸우며 상대를 절벽 밖으로 밀어냅니다. 최후의 한 마리가 승리!</p></div>
         <label>참가자 수<select id="playerCount"></select></label>
         <div id="nameInputs" class="name-inputs"></div>
         <button id="startButton" type="button">게임 시작</button>
@@ -32,6 +38,6 @@
       </div>
     </section>
   </main>
-  <script src="game.js?v=1"></script>
+  <script src="game.js?v=personality-ai-1"></script>
 </body>
 </html>

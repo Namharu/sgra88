@@ -16,4 +16,4 @@
 - 하이로우: https://namharu.github.io/sgra88/games/highlow/
 - 블랙레드: https://namharu.github.io/sgra88/games/blackred/
 - 동물경주: https://namharu.github.io/sgra88/games/race/
-- 절벽 서바이벌: https://namharu.github.io/sgra88/games/cliff/
+- 동물격투기: https://namharu.github.io/sgra88/games/cliff/
