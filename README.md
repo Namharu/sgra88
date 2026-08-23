@@ -9,5 +9,8 @@
 - 일시정지: `P` 또는 `Esc`
 - 최고 기록은 브라우저에 저장됩니다.
 
-GitHub Pages: https://namharu.github.io/sgra88/
+## 페이지
+
+- 게임 목록: https://namharu.github.io/sgra88/
+- STARGLIDE: https://namharu.github.io/sgra88/games/starglide/
 
