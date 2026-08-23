@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="1, 2, 3 중 하나를 자동으로 일곱 번 발사하는 대포 번호 뽑기 게임">
+  <meta property="og:title" content="CANNON 3 — 7 Shot Draw">
+  <meta property="og:description" content="숫자 1·2·3을 대포로 일곱 번 자동 추첨합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
+  <title>CANNON 3 — 7 Shot Draw</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="게임 목록으로 돌아가기"><span class="brand-mark"></span>CANNON 3</a>
+      <button id="soundButton" class="sound" type="button" aria-pressed="false">SOUND OFF</button>
+    </header>
+
+    <section class="game-card" aria-label="대포 번호 뽑기 게임">
+      <div class="game-head">
+        <div><span class="label">NUMBER POOL</span><strong>1 · 2 · 3</strong></div>
+        <div class="progress"><span class="label">AUTO FIRE</span><strong id="progress">0 / 7</strong></div>
+      </div>
+
+      <div id="stage" class="stage">
+        <canvas id="gameCanvas" aria-label="번호 공을 발사하는 대포 애니메이션"></canvas>
+        <div class="copy">
+          <span>SEVEN SHOT RANDOM DRAW</span>
+          <h1>대포<br><em>번호뽑기</em></h1>
+          <p>선택 숫자는 1, 2, 3으로 고정됩니다.<br>시작하면 일곱 발을 자동으로 발사해요.</p>
+        </div>
+
+        <div class="controls">
+          <div id="results" class="results" aria-live="polite" aria-label="추첨 결과">
+            <i>—</i><i>—</i><i>—</i><i>—</i><i>—</i><i>—</i><i>—</i>
+          </div>
+          <button id="startButton" class="launch" type="button"><span>7연발 시작</span><b>FIRE</b></button>
+          <p id="status">버튼을 누르면 자동으로 시작합니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
