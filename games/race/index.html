@@ -10,7 +10,10 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://namharu.github.io/sgra88/og.png?v=2">
   <title>동물경주 — SGRA 88</title>
-  <link rel="stylesheet" href="styles.css?v=results-1">
+  <link rel="stylesheet" href="styles.css?v=straight-track-1">
+  <style>
+    .track-surface{left:6%;right:6%;top:9%;bottom:0;clip-path:none}.finish-gate{left:6%;right:6%;top:8%;height:12px}.finish-gate::before{height:10px;top:-8px;background:repeating-linear-gradient(90deg,#fff 0 12px,#1e2730 12px 24px)}.finish-gate span{top:-25px}.course-obstacle,.course-racer{transition:left .09s linear,bottom .09s linear,transform .09s linear}
+  </style>
 </head>
 <body>
   <main class="shell">
@@ -40,7 +43,7 @@
 
       <div class="race-panel">
         <div class="race-status"><span id="status">참가자를 설정하고 경주를 시작하세요.</span><strong id="timer">0.0</strong></div>
-        <div id="tracks" class="tracks" aria-live="polite"></div>
+        <div id="tracks" class="race-course" aria-live="polite"></div>
         <div id="result" class="result" hidden>
           <small>WINNER</small><div id="winnerAnimal" class="winner-animal"></div>
           <h2 id="winnerName"></h2>
@@ -50,6 +53,6 @@
       </div>
     </section>
   </main>
-  <script src="game.js?v=running-motion-1"></script>
+  <script src="game.js?v=straight-track-1"></script>
 </body>
 </html>
