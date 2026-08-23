@@ -96,7 +96,7 @@ header p {
 .cliff-title::before { background: #8f7bea; }
 .cliff-title .name { font-size: 40px; line-height: 1.05; }
 .wheel-title::before { background: #56e0d4; }
-.wheel-title .name { font-size: 35px; line-height: 1.12; letter-spacing: -.07em; }
+.wheel-title .name { font-size: 52px; line-height: 1.05; letter-spacing: -.07em; }
 .coin-title::before { background: #ffbd35; }
 .coin-title .name { font-size: 43px; line-height: 1.05; }
 
