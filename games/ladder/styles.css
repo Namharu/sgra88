@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500;700&family=Noto+Sans+KR:wght@500;700;900&display=swap');
+
+:root{--bg:#081523;--panel:#102b43;--line:#557994;--cyan:#49e3df;--yellow:#ffe43e;--ink:#edf8ff}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif}
+body{background:radial-gradient(circle at 50% 12%,#183b59,#081523 68%)}
+main{max-width:1440px;margin:auto;padding:18px}
+header{height:52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #7393ad66;font:500 11px 'DM Mono';letter-spacing:.16em}
+header a{color:#fff;text-decoration:none;font-weight:900;font-size:15px}
+header i{display:inline-block;width:14px;height:14px;border:2px solid var(--yellow);rotate:45deg;margin-right:9px}
+.game{display:grid;grid-template-columns:280px minmax(0,1fr);gap:14px;margin-top:14px}
+aside,.stage{border:1px solid var(--line);border-radius:16px;background:#102b43ed;box-shadow:0 14px 42px #020b13bb}
+aside{padding:22px}
+small{font:700 10px 'DM Mono';letter-spacing:.16em;color:var(--cyan)}
+h1{margin:8px 0;font-size:34px}
+aside>p{font-size:13px;line-height:1.7;color:#bfd2df}
+.guide{display:grid;grid-template-columns:34px 1fr;gap:10px 7px;margin-top:20px;padding:15px;border:1px solid #416985;border-radius:12px;background:#0b2237;font-size:12px}
+.guide b{color:var(--yellow);font:700 11px 'DM Mono'}
+.save-note{margin-top:18px!important;color:#7ce8e1!important;font-size:11px!important}
+.stage{position:relative;min-height:720px;overflow:hidden;background:linear-gradient(155deg,#102b43,#071725)}
+.screen{min-height:718px;padding:34px}
+.count-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.count-screen h2{margin:8px 0 4px;font-size:30px}
+.count-screen>p{color:#9eb8c9;font-size:12px}
+.count-stepper{display:grid;grid-template-columns:62px 120px 62px;align-items:center;gap:15px;margin:25px 0}
+.count-stepper button{width:62px;height:62px;padding:0;border-radius:50%;font-size:34px}
+.count-stepper strong{font:900 74px 'DM Mono';color:#fff;text-shadow:0 4px #174d73}
+button{border:0;border-radius:9px;background:var(--yellow);color:#10243d;padding:12px 15px;font-weight:900;cursor:pointer;box-shadow:0 4px #b69000}
+button.secondary{background:#234963;color:#e3f5ff;box-shadow:0 4px #0b1c2a}
+button.cyan{background:#50ddea;box-shadow:0 4px #137d8d}
+button.danger{background:#7e3340;color:#fff;box-shadow:none}
+input,select{width:100%;border:1px solid #557a96;border-radius:8px;background:#153b5a;color:#fff;padding:10px;font:700 12px 'Noto Sans KR'}
+.first-actions{display:grid;grid-template-columns:160px 160px;gap:10px;margin-top:16px}
+.load-panel{width:min(470px,100%);margin-top:22px;padding:16px;border:1px solid #4c748f;border-radius:12px;background:#0a2033;text-align:left}
+.load-panel label{display:block;margin-bottom:7px;font-size:11px;font-weight:900}
+.load-panel>div{display:grid;grid-template-columns:1fr 72px;gap:7px;margin-top:8px}
+.load-panel p{min-height:15px;margin:7px 0 0;color:#72e8df;font-size:10px}
+.screen-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.screen-head h2{margin:5px 0 0;font-size:25px}
+.screen-head>span{color:#78a8c1;font:700 11px 'DM Mono';letter-spacing:.1em}
+.config-scroll,.board-scroll{width:100%;overflow-x:auto;margin-top:24px;padding-bottom:10px}
+.config-board,.play-board{min-width:680px;padding:0 8px}
+.input-row,.starters,.outcomes,.straight-lines{display:grid;gap:8px}
+.input-row input{min-width:0;text-align:center;background:#e9f6fc;color:#10243d;border:2px solid #6799b5}
+.straight-lines{height:365px;margin:6px 0}
+.straight-lines span{position:relative}
+.straight-lines span::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;translate:-50%;border-radius:3px;background:#91b3c5}
+.config-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:min(520px,100%);margin:15px auto 0}
+.save-bar{display:grid;grid-template-columns:1fr 92px;gap:8px;width:min(520px,100%);margin:16px auto 0;padding-top:15px;border-top:1px solid #42627a}
+.save-bar label{display:block;margin-bottom:6px;font-size:11px;font-weight:900}
+.save-bar button{align-self:end}
+.save-bar p{grid-column:1/-1;min-height:15px;margin:0;color:#70e9df;font-size:10px}
+.play-screen{padding-top:26px}
+.starters button{min-width:0;padding:10px 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#eaf7ff;color:#10243d;border:2px solid #5f9fc1;box-shadow:none}
+.starters button.active{background:var(--yellow);border-color:#fff35f;box-shadow:0 0 20px #ffe63a99}
+.outcomes button{min-width:0;padding:9px 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#15364d;color:#c9e4ef;border:1px solid #6f94aa;box-shadow:none}
+.outcomes button.active{background:#f35f6e;color:#fff;border-color:#ffadb5;box-shadow:0 0 20px #f65f6d77}
+#ladderCanvas{display:block;width:100%;height:500px;margin:6px 0;border:1px solid #345b73;border-radius:10px;background:#f3f7f2}
+.play-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;width:min(670px,100%);margin:14px auto 0}
+.all-results{position:absolute;z-index:10;right:20px;top:64px;width:min(340px,calc(100% - 40px));padding:18px;border:2px solid var(--yellow);border-radius:14px;background:#091d30f5;box-shadow:0 18px 50px #000b}
+.result-head{display:flex;align-items:center;justify-content:space-between}
+.result-head button{padding:0;background:transparent;color:#fff;font-size:25px;box-shadow:none}
+.all-results h2{margin:6px 0 12px}
+.all-results ol{margin:0;padding-left:25px;font-size:13px;line-height:2}
+.all-results li::marker{color:var(--yellow);font-weight:900}
+
+@media(max-width:850px){
+  main{padding:8px}
+  .game{grid-template-columns:1fr}
+  aside{padding:14px}
+  aside>p,.guide{display:none}
+  .stage,.screen{min-height:650px}
+  .screen{padding:20px 10px}
+  .count-screen h2{font-size:24px}
+  .first-actions{grid-template-columns:1fr 1fr;width:min(400px,100%)}
+  h1{font-size:26px;margin:4px 0}
+}

@@ -99,6 +99,7 @@ header p {
 .wheel-title::before { background: #56e0d4; }
 .coin-title::before { background: #ffbd35; }
 .draw-title::before { background: #ff6fae; }
+.ladder-title::before { background: #66e29a; }
 
 .game-title {
   position: relative;
