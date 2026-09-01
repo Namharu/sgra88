@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#081523">
+  <meta name="description" content="색깔 공을 골라 순위를 겨루는 SGRA 88 핀볼 게임">
+  <meta property="og:image" content="https://namharu.github.io/sgra88/og.png">
+  <title>핀볼 — SGRA 88</title>
+  <link rel="stylesheet" href="styles.css?v=pinball-1">
+</head>
+<body>
+  <main>
+    <header>
+      <a href="../../"><i></i> Main</a>
+      <span>COLOR BALL PINBALL</span>
+    </header>
+
+    <section class="game">
+      <aside>
+        <small>SGRA 88 PINBALL</small>
+        <h1>핀볼</h1>
+        <p>출전할 색깔 공을 고르세요. 공들이 장애물과 회전 막대를 통과해 결승선에 도착한 순서대로 순위가 결정됩니다.</p>
+        <div class="status-card">
+          <span>RACE STATUS</span>
+          <strong id="raceState">출전할 공을 선택하세요</strong>
+          <div><b id="finishCount">0</b><em> / 0 도착</em></div>
+        </div>
+        <ol id="ranking" class="ranking"><li class="empty">순위 대기 중</li></ol>
+      </aside>
+
+      <section class="stage" aria-label="핀볼 경기장">
+        <div class="board-wrap">
+          <canvas id="raceCanvas" width="220" height="1200" aria-label="컬러볼 핀볼 레이스 화면"></canvas>
+          <div id="countdown" class="countdown" hidden></div>
+        </div>
+
+        <div class="control-panel">
+          <div class="pick-head">
+            <div><small>SELECT BALLS</small><h2>출전할 공을 선택하세요</h2></div>
+            <strong id="selectedCount">0개</strong>
+          </div>
+          <div id="ballPicker" class="ball-picker"></div>
+          <p id="selectedNames" class="selected-names">선택한 공이 없습니다.</p>
+          <p id="error" class="error" role="alert"></p>
+          <div class="actions">
+            <button id="resetButton" class="secondary" type="button">다시 선택</button>
+            <button id="startButton" class="primary" type="button"><span>시작</span></button>
+          </div>
+          <p class="hint">최소 2개 선택 · 결승선 도착 순서대로 순위 결정</p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="game.js?v=pinball-1"></script>
+</body>
+</html>

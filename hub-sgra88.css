@@ -100,6 +100,7 @@ header p {
 .coin-title::before { background: #ffbd35; }
 .draw-title::before { background: #ff6fae; }
 .ladder-title::before { background: #66e29a; }
+.pinball-title::before { background: #7b8cff; }
 
 .game-title {
   position: relative;
